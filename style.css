@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+    background-color: #faf6ed;
+}
+
+img{
+    max-width: 100%;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+    text-transform: uppercase;
+}
+
+nav{
+    background-color: #FB5;
+    grid-column: 3/5;
+    margin: 30px 0;
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 20px;
+}
+
+nav ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    font-size: 14px;
+}
+
+a{
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    padding: 16px 16px;
+}
+
+.grid_section{
+    display: grid;
+    grid-column: 2/4;
+    grid-template-columns: 90px 300px 1fr;
+    grid-gap: 20px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 4rem;
+}
+
+.titulo{
+    font-size: 6rem;
+    grid-column: 1/-1;
+    font-family: 'Playfair Display SC', georgia;
+    font-weight: 200;
+    line-height: 1;
+    margin-bottom: 1.8rem;
+}
+
+.animais_lista{
+    grid-column: 2;
+    height: 370px;
+    overflow-y: scroll;
+}
+
+.animais h2{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: 1rem;
+    color: #E54;
+}
+
+.animais h2::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 10px;
+    margin-right: 10px;
+    background: #FB5;
+  }
+
+.animais p {
+    font-family: Helvetica, Arial;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.animais_txt section{
+    margin-bottom: 3rem;
+
+}
+
+.animais_lista::-webkit-scrollbar{
+    background-color: #faf6ed;
+}
+.animais_lista::-webkit-scrollbar-thumb{
+    background: #FB5;
+    border-left:4px solid #faf6ed;
+    border-right:4px solid #faf6ed;
+}
+
+.faq_lista{
+    grid-column: 2/4;
+}
+.faq_lista dt{
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    color: #E54; 
+}
+.faq_lista dd {
+    font-family: Helvetica, Arial;
+    margin-bottom: .5rem;
+    margin-left: 30px;
+  }
+.faq_lista dt::before{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    margin-right: 10px;
+    background: #FB5
+}
+
+.faq_lista dt::after{
+    content: '⤵';
+    padding-left: 10px;
+}
+
+.mapa{
+    grid-column: 2;
+}
+
+.dados{
+    grid-column:3;
+}
+
+.dados li {
+    margin-bottom: 1rem;
+    font-family: Helvetica, Arial;
+}
+  
+.dados li::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    margin-right: 10px;
+    background: #FB5;
+}
+
+.copy {
+    grid-column: 3/5;
+    margin-bottom: 2rem;
+    background: #FB5;
+}
+  
+.copy p {
+    padding: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+}
+
+/*AREA JS*/ 
+
+.js_texto section {
+    display: none;
+}
+
+section.ativo {
+    display:block;
+    animation: show 1s forwards;
+}
+
+.js_lista dt.ativo::after{
+    content: '⤴';
+}
+
+.js_lista dd.ativo{
+    display: block;
+    animation: deslizarFaq 2s forwards;
+}
+
+.js_lista dd{
+    display: none;
+}
+
+@keyframes deslizarFaq {
+    from{
+        opacity: 0;
+        max-height: 0px;
+    }
+    to{
+        opacity: 1;
+        max-height: 100px;
+    }
+}
+@keyframes show {
+    from{
+        opacity: 0;
+        transform: translate3d(-30px,0,0);
+    }
+    to{
+        opacity: 1;
+    }
+}
